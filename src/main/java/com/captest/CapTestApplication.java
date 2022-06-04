@@ -1,4 +1,4 @@
-package com.cap_ay;
+package com.captest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
