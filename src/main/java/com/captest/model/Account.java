@@ -22,8 +22,7 @@ public class Account {
 	private BigDecimal minimumBalance;
 	//The balance on the account at any particular time
 	private BigDecimal currentBalance;
-	//The name of the account holder
-	private String accountName;
+	
 	//The id of the account holder
 	private long customerID;
 	//The class of the account
