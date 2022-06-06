@@ -15,8 +15,6 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 
-@JsonInclude(Include.NON_NULL)
-@JsonIgnoreProperties(ignoreUnknown = true)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>Create Current Account</title>
+	<title>Show Transactions</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
 		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -17,33 +17,26 @@
 	<div class="container my-2">
 		<div class="card">
 			<div class="card-body">
-				<div th:switch="${accounts}" class="container my-5">
-					<p class="my-5">
-						<a href="/accounts/createCurrentAccount" class="btn btn-primary"><i
-								class="fas fa-user-plus ml-2"> Add A New Account</i></a>
-					</p>
+				<div th:switch="${transList}" class="container my-5">
+					
 					<div class="col-md-10">
-						<h2 th:case="null">No Current Accounts yet!</h2>
+						
 						<div th:case="*">
 							<table class="table table-striped table-responsive-md">
 								<thead>
 									<tr>
-										<th>Customer Id</th>
-										<th>Account Number</th>
-										<th>Account Status</th>
-										<th>Account Balance</th>
-										<th>View</th>
-										<!--<th>Delete</th>-->
+										<th>Transaction Id</th>
+										<th>Transaction Date</th>
+										<th>Transaction Value</th>
+										
 									</tr>
 								</thead>
 								<tbody>
-									<tr th:each="account : ${accounts}">
-										<td th:text="${account.customerID}"></td>
-										<td th:text="${account.accountNumber}"></td>
-										<td th:text="${account.accountStatus}"></td>
-										<td th:text="${account.currentBalance}"></td>
-										<td><a th:href="@{/accounts/edit/{id}(id=${account.accountNumber})}"
-												class="btn btn-primary"><i class="fas fa-user-edit ml-2"></i></a></td>
+									<tr th:each="trans : ${transList}">
+										<td th:text="${trans.id}"></td>
+										<td th:text="${trans.transactionDate}"></td>
+										<td th:text="${trans.transactionValue}"></td>
+										
 										
 									</tr>
 								</tbody>

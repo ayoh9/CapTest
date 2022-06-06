@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -16,8 +17,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-@JsonInclude(Include.NON_NULL)
-@JsonIgnoreProperties(ignoreUnknown = true)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -34,7 +33,6 @@ public class Account {
 	//The balance on the account at any particular time
 	@Column(name = "current_balance", nullable = false)
 	private BigDecimal currentBalance;
-	
 	//The id of the account holder
 	@Column(name = "customer_id", nullable = false)
 	private long customerID;
