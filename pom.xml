@@ -10,7 +10,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.cap_ay</groupId>
-	<artifactId>CapTest</artifactId>
+	<artifactId>captest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>CapTest</name>
 	<description>Cap Test</description>
@@ -82,6 +82,10 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+					<image>
+						<name>ayoh9/captest-${project.artifactId}:${project.version}</name>
+						<pullPolicy>IF_NOT_PRESENT</pullPolicy>
+					</image>
 				</configuration>
 			</plugin>
 		</plugins>
